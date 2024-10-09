@@ -1,0 +1,15 @@
+.homePageContainer {
+  padding: 0 80px;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainerJoin {
+  padding-top: 200px;
+  font-size: 36px;
+  font-weight: 600;
+}
