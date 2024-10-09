@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Outlet,
 } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import {
   HOME_ROUTE,
@@ -15,8 +17,16 @@ import {
 import { HomePage } from "./pages/HomePage/HomePage";
 import { RegistrationPage } from "./pages/RegistrationPage";
 import { LoginPage } from "./pages/LoginPage";
+import { AppDispatch } from "./redux/store";
+import { checkAuth } from "./redux/actions/authActions";
 
 export const App = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
+
   return (
     <Router>
       <Routes>
