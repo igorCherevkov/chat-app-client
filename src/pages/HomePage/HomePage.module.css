@@ -13,3 +13,12 @@
   font-size: 36px;
   font-weight: 600;
 }
+
+.chatContainer {
+  padding-top: 120px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+}

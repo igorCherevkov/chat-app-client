@@ -5,6 +5,7 @@ export const AUTH_FAILURE = "AUTH_FAILURE";
 export const CHECK_AUTH = "CHECK_AUTH";
 export const LOGOUT = "LOGOUT";
 export const AUTH = "AUTH";
+export const FETCH_AUTH = "FETCH_AUTH";
 
 export const auth = (
   login: string,

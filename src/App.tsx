@@ -5,9 +5,10 @@ import {
   Routes,
   Outlet,
 } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
+  ERROR_ROUTE,
   HOME_ROUTE,
   LOGIN_ROUTE,
   LOGOUT,
@@ -19,13 +20,22 @@ import { RegistrationPage } from "./pages/RegistrationPage";
 import { LoginPage } from "./pages/LoginPage";
 import { AppDispatch } from "./redux/store";
 import { checkAuth } from "./redux/actions/authActions";
+import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
+import { fetchUsers } from "./redux/actions/usersActions";
+import { RootState } from "./redux/reducers/rootReducer";
+import { Roles } from "./types";
 
 export const App = () => {
+  const user = useSelector((state: RootState) => state.authReducer);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(checkAuth());
-  }, [dispatch]);
+    if (user.user?.role === Roles.admin) {
+      dispatch(fetchUsers());
+    }
+  }, [dispatch, user.user?.role]);
 
   return (
     <Router>
@@ -33,8 +43,9 @@ export const App = () => {
         <Route path={HOME_ROUTE} element={<HomePage />}></Route>
         <Route path={REGISTRATION_ROUTE} element={<RegistrationPage />}></Route>
         <Route path={LOGIN_ROUTE} element={<LoginPage />}></Route>
-        <Route path={PROFILE_ROUTE}></Route>
+        <Route path={PROFILE_ROUTE} element={<ProfilePage />}></Route>
         <Route path={LOGOUT} element={<Outlet />} />
+        <Route path={ERROR_ROUTE} element={<ErrorPage />} />
       </Routes>
     </Router>
   );

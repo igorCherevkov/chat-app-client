@@ -2,7 +2,13 @@ import { useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { LOGIN_ROUTE, LOGOUT, REGISTRATION_ROUTE } from "../../consts/routes";
+import {
+  HOME_ROUTE,
+  LOGIN_ROUTE,
+  LOGOUT,
+  PROFILE_ROUTE,
+  REGISTRATION_ROUTE,
+} from "../../consts/routes";
 import styles from "./Header.module.css";
 import { RootState } from "../../redux/reducers/rootReducer";
 import { AppDispatch } from "../../redux/store";
@@ -20,7 +26,9 @@ export const Header = () => {
 
   return (
     <div className={styles.headerContainer}>
-      <h1 className={styles.headerLogo}>ChatApp</h1>
+      <Link to={HOME_ROUTE} className={styles.headerLogo}>
+        ChatApp
+      </Link>
       <div className={styles.headerButtons}>
         {user.isAuth ? (
           <>
@@ -29,7 +37,10 @@ export const Header = () => {
               className={styles.headerButton}
               onClick={handleLogout}
             >
-              Выйти
+              Logout
+            </Link>
+            <Link to={PROFILE_ROUTE} className={styles.headerButton}>
+              Profile
             </Link>
           </>
         ) : (

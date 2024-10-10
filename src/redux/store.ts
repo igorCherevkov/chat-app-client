@@ -3,13 +3,18 @@ import createSagaMiddleware from "redux-saga";
 
 import { rootReducer } from "./reducers/rootReducer";
 import { rootSaga } from "./saga/rootSaga";
+import { CHANGE_PROFILE_REQUEST } from "./actions/usersActions";
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(sagaMiddleware),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [CHANGE_PROFILE_REQUEST],
+      },
+    }).concat(sagaMiddleware),
 });
 
 sagaMiddleware.run(rootSaga);

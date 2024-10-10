@@ -12,7 +12,7 @@ export const HomePage = () => {
       <Header />
       <section className={styles.mainContainer}>
         {user.isAuth ? (
-          <></>
+          <div className={styles.chatContainer}>Чат</div>
         ) : (
           <span className={styles.mainContainerJoin}>
             Join our site to use chat

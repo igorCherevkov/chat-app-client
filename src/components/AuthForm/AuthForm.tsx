@@ -39,7 +39,6 @@ export const AuthForm = (props: AuthProps) => {
 
         navigate(HOME_ROUTE);
       } catch (error) {
-        // сделать модалку с ошибками
         console.log(error);
       }
     },
