@@ -69,10 +69,10 @@ export const ProfilePage = () => {
               </div>
               <label className={styles.fileInput}>
                 <input type="file" name="avatar" />
-                <span>Загрузить аватар</span>
+                <span>Upload avatar</span>
               </label>
               <button type="submit" className={styles.formButton}>
-                Сохранить
+                Save
               </button>
             </form>
           </div>

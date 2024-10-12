@@ -6,7 +6,7 @@
 }
 
 .headerLogo {
-  color: #ffffff;
+  color: var(--font-white-color);
   font-size: 30px;
   font-weight: 700;
 }
@@ -17,10 +17,10 @@
 }
 
 .headerButton {
-  color: #ffffff;
+  color: var(--font-white-color);
   padding: 12px 28px;
   border-radius: 3px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
-  background: #fc6e51;
+  background: var(--buttons-color);
   cursor: pointer;
 }

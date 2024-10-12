@@ -7,7 +7,6 @@ export const fetchChangeProfile = async (
   id: number,
   formData: FormData
 ): Promise<AxiosResponse<User>> => {
-  console.log(id, formData);
   return await $host.patch(`/users/${id}`, formData, {
     headers: {
       "Content-Type": "multipart/form-data",

@@ -1,0 +1,41 @@
+.chatItemContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 4px 2px;
+  border-radius: 4px;
+  border-bottom: 1px var(--input-color) solid;
+}
+
+.chatContainerImg {
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-black-color);
+  background-color: var(--light-blue);
+  border-radius: 50%;
+}
+
+.metaName {
+  font-size: 14px;
+  overflow-wrap: break-word;
+}
+
+.metaMessage {
+  font-size: 12px;
+  color: #a7a7a7;
+}
+
+.chatItemContainer:hover {
+  background-color: var(--sidebar-color);
+}
+
+.chatItemContainer.active {
+  background-color: var(--buttons-color);
+}

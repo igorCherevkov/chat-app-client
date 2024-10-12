@@ -1,0 +1,37 @@
+.modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: var(--container-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+}
+
+.modalContainer h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modalContainer input {
+  width: 100%;
+  padding: 14px 0 14px 10px;
+  font-size: 18px;
+  line-height: 1.2;
+  background-color: var(--input-color);
+}
+
+.modalContainer button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: var(--buttons-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

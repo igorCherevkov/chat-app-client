@@ -1,28 +1,28 @@
 import { useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
   HOME_ROUTE,
   LOGIN_ROUTE,
-  LOGOUT,
   PROFILE_ROUTE,
   REGISTRATION_ROUTE,
 } from "../../consts/routes";
-import styles from "./Header.module.css";
 import { RootState } from "../../redux/reducers/rootReducer";
 import { AppDispatch } from "../../redux/store";
 import { logout } from "../../redux/actions/authActions";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   const user = useSelector((state: RootState) => state.authReducer);
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
     localStorage.removeItem("token");
     dispatch(logout());
-    window.location.reload();
-  }, [dispatch]);
+    navigate(HOME_ROUTE);
+  }, [dispatch, navigate]);
 
   return (
     <div className={styles.headerContainer}>
@@ -32,13 +32,9 @@ export const Header = () => {
       <div className={styles.headerButtons}>
         {user.isAuth ? (
           <>
-            <Link
-              to={LOGOUT}
-              className={styles.headerButton}
-              onClick={handleLogout}
-            >
+            <button className={styles.headerButton} onClick={handleLogout}>
               Logout
-            </Link>
+            </button>
             <Link to={PROFILE_ROUTE} className={styles.headerButton}>
               Profile
             </Link>

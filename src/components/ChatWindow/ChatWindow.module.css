@@ -1,0 +1,102 @@
+.chatWindowContainer {
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chatMessages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 40px 60px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.messageContainer {
+  width: 100%;
+  display: flex;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.messageUserImg {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #60cccc;
+  border-radius: 50%;
+}
+
+.myMessageContainer {
+  justify-content: flex-end;
+}
+
+.contactMessageContainer {
+  justify-content: flex-start;
+}
+
+.message {
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  max-width: 40%;
+  word-wrap: break-word;
+}
+
+.myMessage {
+  background-color: var(--buttons-color);
+}
+
+.contactMessage {
+  background-color: var(--container-color);
+}
+
+.chatInput {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.chatInput input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid var(--buttons-black-color);
+  border-radius: 5px;
+}
+
+.chatInput button {
+  padding: 8px 16px;
+  border: none;
+  background-color: var(--buttons-black-color);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.noMessages {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addImg {
+  width: 30px;
+  height: 30px;
+  color: var(--font-black-color);
+  cursor: pointer;
+}
+
+.msgImg {
+  width: 80px;
+  height: 140px;
+}
